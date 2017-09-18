@@ -11,18 +11,17 @@
 |
 */
 
-use App\Models\Post;
-
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/blog', 'HomeController@blog');
-Route::get('lista-post', 'PostController@index');
-
 Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadsController@store']);
-Route::get('/post',  function (){
-    return view('post');
+Route::get('/', ['as' => 'welcome', 'uses' => 'HomeController@blog']);
+
+Auth::routes();
+
+Route::middleware(['web'])->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::prefix('posts')->group(function () {
+	    Route::get('/', ['as' => 'adm.post.index', 'uses' => 'PostsController@index']);
+	    Route::get('/criar', ['as' => 'adm.post.create', 'uses' => 'PostsController@create']);
+	    Route::post('/criar', ['as' => 'adm.post.store', 'uses' => 'PostsController@store']);
+	});
 });
-
-

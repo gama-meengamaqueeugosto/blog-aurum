@@ -31,7 +31,7 @@ class HomeController extends Controller
         return view('welcome', ['posts' => 'asda']);
     }
 
-    public function Blog()
+    public function blog()
     {
         return view('paginas.blog');
     }

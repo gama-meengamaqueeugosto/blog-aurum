@@ -1,3 +1,6 @@
+@extends('main')
+
+@section('content')
 <section class="bg-light" id="blog">
     <div class="row">
 
@@ -141,3 +144,4 @@
     </div>
     <!-- /.row -->
 </section>
+@stop
