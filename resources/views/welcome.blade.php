@@ -17,14 +17,10 @@
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
-                height: 100vh;
+                max-width: 100%;
+                overflow-x: hidden;
                 margin: 0;
             }
-
-            .full-height {
-                height: 100vh;
-            }
-
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -43,10 +39,22 @@
 
             .content {
                 text-align: center;
+                margin-top: 5%;
             }
 
             .title {
-                font-size: 84px;
+                display: inline-block;
+                width: 50%;
+                margin: 0 auto;
+            }
+            .title img {
+                width: auto;
+                max-width: 100%;
+                height: auto;
+            }
+
+            .links {
+                margin-top: -8%;
             }
 
             .links > a {
@@ -66,7 +74,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            {{-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -75,19 +83,15 @@
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
-            @endif
+            @endif --}}
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="title">
+                    <img src="{{ asset('img/logo.png') }}" alt="Advogado Moderno">
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <h1>Em construção...</h1>
                 </div>
             </div>
         </div>
