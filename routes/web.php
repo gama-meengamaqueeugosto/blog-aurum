@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadsController@store']);
 Route::get('/', ['as' => 'welcome', 'uses' => 'HomeController@posts']);
 
