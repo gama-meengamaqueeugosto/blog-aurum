@@ -14,7 +14,14 @@
 Route::get('/', function () {
     return view('home');
 });
-Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadsController@store']);
+Route::get('/contato', function () {
+    return view('contato');
+});
+Route::get('/post', function () {
+    return view('post');
+});
+
+Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadController@store']);
 
 
 Auth::routes();

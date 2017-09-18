@@ -1,4 +1,5 @@
 @extends('main')
+@include('paginas.header')
 
 @section('content')
     <section id="blog">
