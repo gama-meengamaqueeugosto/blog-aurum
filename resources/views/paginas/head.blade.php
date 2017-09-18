@@ -21,11 +21,3 @@
     <link href="{{ asset('css/advogadomoderno.css') }}" rel="stylesheet">
 
 </head>
-
-<header class="masthead">
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-lead-in">Blog do Advogado Moderno</div>
-        </div>
-    </div>
-</header>

@@ -14,6 +14,13 @@
 Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadsController@store']);
 Route::get('/', ['as' => 'welcome', 'uses' => 'HomeController@blog']);
 
+Route::get('/contato', function () {
+    return view('contato');
+});
+Route::get('/post', function () {
+    return view('post');
+});
+
 Auth::routes();
 
 Route::middleware(['web'])->group(function () {

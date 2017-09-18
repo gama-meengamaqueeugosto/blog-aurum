@@ -24,7 +24,7 @@
 <script src="{{ asset('js/jquery-easing/jquery.easing.min.js') }}"></script>
 
 <!-- Custom scripts for this template -->
-<script src="{{ asset('js/agency.min.js') }}"></script>
+<script src="{{ asset('js/advogadomoderno.js') }}"></script>
 
 </body>
 
