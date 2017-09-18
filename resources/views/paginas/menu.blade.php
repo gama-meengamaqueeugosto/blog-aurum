@@ -10,10 +10,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/blog') }}">Blog</a>
+                    <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/contato') }}">Contato</a>
                 </li>
             </ul>
         </div>

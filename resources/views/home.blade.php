@@ -1,16 +1,15 @@
 @extends('main')
 
 @section('content')
-    <br><br>
+    <section id="blog">
     <div class="row">
+            @include("paginas.blog")
 
-        @include("paginas.blog")
-
-
-        <div class="col-md-4">
-            @include("paginas.newsletter")
-            @include("paginas.busca")
-            @include("paginas.tags")
-        </div>
+            <div class="col-md-4">
+                @include("paginas.newsletter")
+                @include("paginas.busca")
+                @include("paginas.tags")
+            </div>
     </div>
+    </section>
 @endsection

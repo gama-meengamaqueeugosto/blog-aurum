@@ -26,13 +26,9 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function posts()
-    {
-        return view('welcome', ['posts' => 'asda']);
-    }
 
-    public function Blog()
+    public function blog()
     {
-        return view('paginas.blog');
+        return view('paginas.blog', ['posts' => 'asda']);
     }
 }
