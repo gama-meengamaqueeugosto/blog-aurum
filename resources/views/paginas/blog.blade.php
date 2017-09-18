@@ -1,18 +1,21 @@
 <div class="col-md-8">
-
-    <!-- Blog Post -->
-    <div class="card mb-4">
-        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-        <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-                aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi
-                vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="{{ url('/post/') }}" class="btn btn-primary">Leia Mais &rarr;</a>
+    @foreach($posts as $post)
+        <!-- Blog Post -->
+        <div class="card mb-4">
+            <img class="card-img-top" src="{{ $post->image }}" alt="Card image cap">
+            <div class="card-body">
+                <h2 class="card-title">{{ $post->title }}</h2>
+                <div class="card-text">
+                    {{ str_limit($post->short_description, 100) }}
+                </div>
+                <br>
+                <a href="{{ route('site.post', $post->slug) }}" class="btn btn-primary">Leia Mais &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+                Postado em {{ $post->created_at->format('d \\d\\e F \\d\\e Y') }} por
+                <a href="#">{{ $post->author }}</a>
+            </div>
         </div>
-        <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-        </div>
-    </div>
+    @endforeach
 </div>
+

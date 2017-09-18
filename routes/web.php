@@ -13,12 +13,10 @@
 
 Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadsController@store']);
 Route::get('/', ['as' => 'welcome', 'uses' => 'HomeController@blog']);
+Route::get('/post/{slug}', ['as' => 'site.post', 'uses' => 'HomeController@post']);
 
 Route::get('/contato', function () {
     return view('contato');
-});
-Route::get('/post', function () {
-    return view('post');
 });
 
 Auth::routes();

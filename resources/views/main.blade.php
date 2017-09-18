@@ -14,6 +14,9 @@
     @yield("content")
 </div>
 <!-- /.container -->
+<?php
+	Carbon\Carbon::setLocale('pt-BR');
+ ?>
 
 <!-- Bootstrap core JavaScript -->
 <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
