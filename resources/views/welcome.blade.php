@@ -1,6 +1,16 @@
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106648596-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+
+            gtag('config', 'UA-106648596-1');
+        </script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,6 +83,7 @@
         </style>
     </head>
     <body>
+        @include("analytics")
         <div class="flex-center position-ref full-height">
             {{-- @if (Route::has('login'))
                 <div class="top-right links">
