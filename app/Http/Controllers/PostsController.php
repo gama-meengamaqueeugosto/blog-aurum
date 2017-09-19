@@ -20,7 +20,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.post.index', ['posts' => Post::orderBy('created_at', 'DESC')->paginate()]);
+        return view('dashboard.post.index', ['posts' => Post::orderBy('created_at', 'DESC')->get()]);
     }
 
     /**
@@ -53,7 +53,6 @@ class PostsController extends Controller
         {
             $this->post->uploadImage($request->file('image'));
         }
-        $this->post->date = Carbon::now();
 
         $this->post->save();
 
