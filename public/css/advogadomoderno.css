@@ -9,11 +9,7 @@ body {
 
 p {
   line-height: 1.75; }
-
-a {
-  color: #0c0e22; }
-  a.active, a:active, a:focus, a:hover {
-    color: #0c0e22; }
+  
 
 h1,
 h2,
