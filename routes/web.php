@@ -11,7 +11,7 @@
 |
 */
 
-Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadsController@store']);
+Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadController@store']);
 Route::get('/', ['as' => 'welcome', 'uses' => 'HomeController@blog']);
 Route::get('/post/{slug}', ['as' => 'site.post', 'uses' => 'HomeController@post']);
 

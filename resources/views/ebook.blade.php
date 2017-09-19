@@ -9,24 +9,43 @@
                 <img class="card-img-top" src="{{ asset('img/propaganda/ebook.png') }}" alt="Guia do Advogado Moderno">
             </div>
             <div class="col-lg-6">
-                <form id="formContato" name="sentMessage" novalidate>
+                <form action="{{ route('leads.save') }}" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="ebook" value="1">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input class="form-control" id="nome" type="text" placeholder="Nome *" required
-                                       data-validation-required-message="Por favor, preencha seu nome.">
-                                <p class="help-block text-danger"></p>
+                                <input class="form-control" name="name" id="nome" type="text" placeholder="Nome *" required>
+                                <p id="error-name" class="help-block text-danger">
+                                    @if($errors->has('name'))
+                                        {{ $errors->first('name') }}
+                                    @endif
+                                </p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="E-mail*" required
-                                       data-validation-required-message="Por favor, preencha seu e-maol.">
-                                <p class="help-block text-danger"></p>
+                                <input class="form-control" name="email" id="email" type="email" placeholder="E-mail*" required>
+                                <p class="help-block text-danger">
+                                    @if($errors->has('email'))
+                                        {{ $errors->first('email') }}
+                                    @endif
+                                </p>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="type" id="type1" value="B2C" checked>
+                                Pessoa Física
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="type" id="type2" value="B2B">
+                                Pessoa Jurídica
+                              </label>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                         <div class="col-lg-12 text-center">
-                            <div id="success"></div>
-                            <button id="enviaMensagem" class="btn btn-xl" type="submit">Baixar agora!</button>
+                            <button class="btn btn-xl" type="submit">Baixar agora!</button>
                         </div>
                     </div>
                 </form>
@@ -34,3 +53,17 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+<script>
+        $(document).ready(function(){
+            $("#nome").on('blur', function() {
+                $words = $("#nome").val().trim().split(' ');
+                if($words.length < 2){
+                    $("#error-name").text("É necessário seu nome completo");
+                }else {
+                    $("#error-name").text("");
+                }
+            });
+        });
+    </script>
+@stop

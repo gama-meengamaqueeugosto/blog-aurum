@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LeadsSaveRequest;
 use Illuminate\Http\Request;
+use App\Lead;
 
 class LeadController extends Controller
 {
@@ -30,7 +31,13 @@ class LeadController extends Controller
     public function store(LeadsSaveRequest $request)
     {
         $this->lead->fill($request->all());
+        $this->lead->ip = $request->ip();
         $this->lead->save();
+
+        if($request->ebook)
+        {
+            return response()->download(public_path('/ebooks/o-guia-pratico-do-advogado-moderno-ebook.pdf'));
+        }
 
         return redirect()->route('leads.success');
     }

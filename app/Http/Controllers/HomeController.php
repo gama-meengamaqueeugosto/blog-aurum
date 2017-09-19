@@ -7,6 +7,10 @@ use App\Models\Post;
 
 class HomeController extends Controller
 {
+    public function index()
+    {
+        return view('dashboard.home');
+    }
     /**
      * Create a new controller instance.
      *
