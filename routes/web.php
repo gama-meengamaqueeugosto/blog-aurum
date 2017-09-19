@@ -24,6 +24,10 @@ Route::get('/post', function () {
 Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadController@store']);
 
 
+Route::get('/cartao', function () {
+    return view('cartao');
+});
+
 Auth::routes();
 Route::middleware(['web'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
