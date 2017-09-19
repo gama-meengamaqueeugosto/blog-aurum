@@ -46,4 +46,11 @@ class LeadController extends Controller
     {
         return view('success');
     }
+
+    public function show()
+    {
+        return view('dashboard.leads',[
+            'leads' => $this->lead->orderBy('name')->paginate(),
+        ]);
+    }
 }
