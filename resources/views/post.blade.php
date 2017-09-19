@@ -12,13 +12,13 @@
     <br><br>
     <div class="card mb-12">
         <div class="card-body">
-            <h2 class="card-title">{{$post->title}}</h2>
+            <h1 class="card-title">{{$post->title}}</h1>
             <div>
                 <span><i>{{ $post->author }}<i></span>
                 <span> - Postado em {{ $post->created_at->format('d \\d\\e F \\d\\e Y') }}</span>
             </div>
             <br><br>
-            <div class="card-text">
+            <div class="card-text" style="font-style: normal;">
                 {!! $post->description !!}
             </div>
         </div>
