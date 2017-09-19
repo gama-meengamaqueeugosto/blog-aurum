@@ -10,7 +10,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="col-lg-12">
-                    <p>Neste e-book, você vai conhecer as principais características para se tornar um advogado moderno, tornando-se um profissional de destaque no mercado.</p>
+                    <p>Neste e-book você vai conhecer as principais características para ser um advogado moderno, tornando-se um profissional de destaque no mercado.</p>
                 </div>
                 <form action="{{ route('leads.save') }}" method="POST">
                     {{ csrf_field() }}
