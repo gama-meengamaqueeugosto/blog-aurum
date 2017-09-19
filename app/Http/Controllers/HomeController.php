@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -11,24 +12,22 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Post $post)
     {
-        
+        $this->post = $post;
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('home');
-    }
-
 
     public function blog()
     {
-        return view('paginas.blog', ['posts' => 'asda']);
+        return view('home', [
+            'posts'     => $this->post->orderBy('created_at', 'DESC')->get(),
+            'recents'   => $this->post->orderBy('created_at', 'DESC')->take(3)
+        ]);
+    }
+
+    public function post($slug)
+    {
+        $post = $this->post->where('slug', '=', $slug)->firstOrFail();
+        return view('post', ['post' => $post]);
     }
 }
