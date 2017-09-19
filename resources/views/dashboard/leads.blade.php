@@ -38,7 +38,7 @@
                                         </td>
                                         <td>{{ $lead->email }}</td>
                                         <td>{{ $lead->type }}</td>
-                                        <td>{{ $lead->created_at->format('d/m/Y') }}</td>
+                                        <td>{{ $lead->created_at->format('d/m/Y H:i:s') }}</td>
                                         <td>{{ $lead->ip }}</td>
                                         <td>
                                             {{-- <a href="" class="btn btn-default">Editar</a> --}}
