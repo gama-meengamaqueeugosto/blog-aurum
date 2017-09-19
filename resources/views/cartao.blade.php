@@ -23,14 +23,23 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="nome" type="text" placeholder="Nome *" required
-                                       data-validation-required-message="Por favor, preencha seu nome.">
-                                <p class="help-block text-danger"></p>
+                                <input class="form-control" id="nome" type="text" placeholder="Nome Completo*" required value="{{old('name')}}">
+                                <p class="help-block text-danger">
+                                    @if($errors->has('name'))
+                                        {{ $errors->first('name')}}
+                                    @endif
+                                    @if(session()->has('error'))
+                                        {{ session()->get('error.name') }}
+                                    @endif
+                                </p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="E-mail*" required
-                                       data-validation-required-message="Por favor, preencha seu e-mail.">
-                                <p class="help-block text-danger"></p>
+                                <input class="form-control" id="email" type="email" placeholder="E-mail*" required value="{{ old('email') }}">
+                                <p class="help-block text-danger">
+                                    @if($errors->has('email'))
+                                        {{ $errors->first('email')}}
+                                    @endif
+                                </p>
                             </div>
                             <div class="form-group">
                                 <input class="form-control" id="telefone" type="text" placeholder="Telefone*" required

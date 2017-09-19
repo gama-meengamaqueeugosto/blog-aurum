@@ -8,16 +8,19 @@
                     <form id="form-assinar" name="assign" novalidate>
                         <div class="form-group">
                             <input class="form-control" id="nome" type="text" placeholder="Nome Completo *"
-                                   required name="name">
+                                   required name="name" value="{{old('name')}}">
                             <p id="error-name" class="help-block text-danger">
-                                @if($errors->has('name'))
-                                    {{ $errors->first('name') }}
-                                @endif
+                            @if($errors->has('name'))
+                                {{ $errors->first('name')}}
+                            @endif
+                            @if(session()->has('error'))
+                                {{ session()->get('error.name') }}
+                            @endif
                             </p>
                         </div>
                         <div class="form-group">
                             <input class="form-control" id="email" type="email" placeholder="E-mail *"
-                                   required name="email">
+                                   required name="email" value="{{old('email')}}">
                             <p class="help-block text-danger">
                                 @if($errors->has('email'))
                                     {{ $errors->first('email') }}

@@ -30,6 +30,16 @@ class LeadController extends Controller
 
     public function store(LeadsSaveRequest $request)
     {
+        if($request->has('name'))
+        {
+            $words = explode(' ', $request->name);
+
+
+            if(count($words) < 2)
+            {
+                return redirect()->back()->withInput()->with(['error'=>['name' => 'É necessário o nome completo']]);
+            }
+        }
         $this->lead->fill($request->all());
         $this->lead->ip = $request->ip();
         $this->lead->save();
