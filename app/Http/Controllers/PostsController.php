@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostSaveRequest;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -46,16 +47,20 @@ class PostsController extends Controller
      */
     public function store(PostSaveRequest $request)
     {
-        dd($request->all());
         $this->post->fill($request->all());
 
         if($request->hasFile('image'))
         {
             $this->post->uploadImage($request->file('image'));
         }
+        $this->post->date = Carbon::now();
+
+        $this->post->save();
+
+        return redirect()->route('adm.post.index')->with(['status' => 'Post cadastrado com sucesso']);
     }
 
-    /**
+    /** 
      * Display the specified resource.
      *
      * @param  \App\Models\Post  $post
@@ -95,8 +100,13 @@ class PostsController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        $post = $this->post->findOrFail($id);
+
+        $post->destroyImage($post->image);
+        $post->destroy($id);
+
+        return redirect()->route('adm.post.index')->with(['status' => 'Post excluído com sucesso']);        
     }
 }

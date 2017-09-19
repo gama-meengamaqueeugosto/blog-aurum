@@ -7,6 +7,14 @@
 </div><!-- .form-group -->
 
 <div class="form-group">
+    <label for="short_description" class="control-label col-sm-2">Descrição curta (pág. home)</label>
+
+    <div class="col-sm-8">
+        <textarea style="width: 100%;" rows="3" name="short_description" id="short_description" required>{!! $post->short_description !!}</textarea>
+    </div><!-- .col-sm-8 -->
+</div><!-- .form-group -->
+
+<div class="form-group">
     <label for="description" class="control-label col-sm-2">Conteúdo</label>
     
     <div class="col-sm-8">
@@ -23,18 +31,7 @@
 </div><!-- .form-group -->
 
 <div class="form-group">
-    <label for="date" class="control-label col-sm-2">Data da publicação</label>
-
-    <div class="col-sm-4">
-        <div class="input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-            <input type="text" name="date" id="date" class="form-control" value="" maxlength="255" required>
-        </div>
-    </div><!-- .col-sm-8 -->
-</div><!-- .form-group -->
-
-<div class="form-group">
-    <label for="image" class="control-label col-sm-2">Data da publicação</label>
+    <label for="image" class="control-label col-sm-2">Imagem</label>
 
     <div class="col-sm-4">
         <div class="input-group">

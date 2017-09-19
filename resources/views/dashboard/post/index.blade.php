@@ -35,13 +35,15 @@
                             <tbody>
                                 @foreach($posts as $post)
                                     <tr>
-                                        <td></td>
+                                        <td>
+                                            <img width="70" src="{{ $post->image }}" alt="">
+                                        </td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->author }}</td>
                                         <td>{{ $post->created_at->format('d/m/Y') }}</td>
                                         <td>
-                                            <a href="" class="btn btn-default">Editar</a>
-                                            <a href="" class="btn btn-default">Excluir</a>
+                                            {{-- <a href="" class="btn btn-default">Editar</a> --}}
+                                            <a href="{{ route('adm.post.destroy', $post->id) }}" class="btn btn-default">Excluir</a>
                                         </td>
                                     </tr>
                                 @endforeach
