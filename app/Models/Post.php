@@ -27,7 +27,7 @@ class Post extends Model
     public function uploadImage($image){
         $name = $this->slug.'-'.Carbon::now()->timestamp;
         Cloudder::upload($image, 'posts/'.$this->slug.'/images/'.$name, [], ['posts', $this->slug]);
-        $this->attributes['image'] = Cloudder::getResult()['url'];
+        $this->image = Cloudder::getResult()['url'];
     }
 
     public function destroyImage($image){
