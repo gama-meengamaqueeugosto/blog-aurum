@@ -27,7 +27,7 @@ Route::get('/cartao', function () {
     return view('cartao');
 });
 
-Route::group(['prefix' => 'admin',  'middleware' => 'web'], function()
+Route::group('middleware' => 'web'], function()
 {
     Route::get('/home', 'HomeController@index')->name('home');
 
