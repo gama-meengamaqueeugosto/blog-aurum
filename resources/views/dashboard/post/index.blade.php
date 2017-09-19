@@ -38,7 +38,7 @@
                                         <td></td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->author }}</td>
-                                        <td>{{ $post->creted_at->format('d/m/Y') }}</td>
+                                        <td>{{ $post->created_at->format('d/m/Y') }}</td>
                                         <td>
                                             <a href="" class="btn btn-default">Editar</a>
                                             <a href="" class="btn btn-default">Excluir</a>

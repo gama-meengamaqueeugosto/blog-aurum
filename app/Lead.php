@@ -11,6 +11,7 @@ class Lead extends Model
     public $fillable = [
     	'name',
     	'email',
-        'ip'
+        'ip',
+        'type'
     ];
 }

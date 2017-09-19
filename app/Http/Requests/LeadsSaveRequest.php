@@ -24,7 +24,7 @@ class LeadsSaveRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required',
+            'name' => 'required',
             'email'=> 'required',
         ];
     }
