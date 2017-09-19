@@ -19,6 +19,10 @@ Route::get('/contato', function () {
     return view('contato');
 });
 
+Route::get('/ebook', function () {
+    return view('ebook');
+});
+
 Auth::routes();
 
 Route::middleware(['web'])->group(function () {

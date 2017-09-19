@@ -14,7 +14,7 @@ class AddShortDescriptionIntoPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->text('short_description')->after('slug')->default(null);
+            $table->text('short_description')->default(null);
         });
     }
 
