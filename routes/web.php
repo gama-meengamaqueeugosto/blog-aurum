@@ -23,6 +23,10 @@ Route::get('/ebook', function () {
     return view('ebook');
 });
 
+Route::get('/cartao', function () {
+    return view('cartao');
+});
+
 Auth::routes();
 
 Route::middleware(['web'])->group(function () {
