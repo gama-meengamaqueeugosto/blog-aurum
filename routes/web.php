@@ -27,9 +27,8 @@ Route::get('/cartao', function () {
     return view('cartao');
 });
 
-Auth::routes();
-
-Route::middleware(['web'])->group(function () {
+Route::group(['prefix' => 'admin',  'middleware' => 'web'], function()
+{
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::prefix('posts')->group(function () {
@@ -38,3 +37,5 @@ Route::middleware(['web'])->group(function () {
 	    Route::post('/criar', ['as' => 'adm.post.store', 'uses' => 'PostsController@store']);
 	});
 });
+
+Auth::routes();
