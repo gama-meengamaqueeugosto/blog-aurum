@@ -14,7 +14,7 @@ class AddTypeFieldToLeadsTable extends Migration
     public function up()
     {
         Schema::table('leads', function (Blueprint $table) {
-            $table->enum('type', ['B2B', 'B2C']);
+            $table->enum('type', ['B2B', 'B2C'])->default('B2C');
         });
     }
 
@@ -26,7 +26,7 @@ class AddTypeFieldToLeadsTable extends Migration
     public function down()
     {
         Schema::table('leads', function (Blueprint $table) {
-            //
+            $table->dropColumn('type');
         });
     }
 }

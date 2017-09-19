@@ -9,6 +9,9 @@
                 <img class="card-img-top" src="{{ asset('img/propaganda/ebook.png') }}" alt="Guia do Advogado Moderno">
             </div>
             <div class="col-lg-6">
+                <div class="col-lg-12">
+                    <p>Neste e-book, você vai conhecer as principais características para se tornar um advogado moderno, tornando-se um profissional de destaque no mercado.</p>
+                </div>
                 <form action="{{ route('leads.save') }}" method="POST">
                     {{ csrf_field() }}
                     <input type="hidden" name="ebook" value="1">

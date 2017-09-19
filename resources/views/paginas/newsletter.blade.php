@@ -2,19 +2,27 @@
     <h5 class="card-header">ASSINE NOSSO CONTEÚDO</h5>
     <div class="card-body">
         <form action="{{ route('leads.save') }}" method="POST">
+            {{ csrf_field() }}
             <div class="row">
                 <div class="col-md-12">
                     <form id="form-assinar" name="assign" novalidate>
                         <div class="form-group">
-                            <input class="form-control" id="nome" type="text" placeholder="Nome *"
-                                   required data-validation-required-message="Please enter your name.">
-                            <p class="help-block text-danger"></p>
+                            <input class="form-control" id="nome" type="text" placeholder="Nome Completo *"
+                                   required name="name">
+                            <p id="error-name" class="help-block text-danger">
+                                @if($errors->has('name'))
+                                    {{ $errors->first('name') }}
+                                @endif
+                            </p>
                         </div>
                         <div class="form-group">
                             <input class="form-control" id="email" type="email" placeholder="E-mail *"
-                                   required
-                                   data-validation-required-message="Please enter your email address.">
-                            <p class="help-block text-danger"></p>
+                                   required name="email">
+                            <p class="help-block text-danger">
+                                @if($errors->has('email'))
+                                    {{ $errors->first('email') }}
+                                @endif
+                            </p>
                         </div>
                     </form>
                 </div>

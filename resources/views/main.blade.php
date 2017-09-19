@@ -28,6 +28,19 @@
 
 </body>
 
+<script>
+    $(document).ready(function(){
+        $("#nome").on('blur', function() {
+            $words = $("#nome").val().trim().split(' ');
+            if($words.length < 2){
+                $("#error-name").text("É necessário seu nome completo");
+            }else {
+                $("#error-name").text("");
+            }
+        });
+    });
+</script>
+
 @yield('scripts')
 
 </html>

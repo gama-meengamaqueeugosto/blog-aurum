@@ -15,10 +15,10 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="radio col-md-4">
-                                        <label><input type="radio" name="modelo1" checked> Modelo 1</label>
+                                        <label><input type="radio" name="modelo" value="1" checked> Modelo 1</label>
                                     </div>
                                     <div class="radio  col-md-4">
-                                        <label><input type="radio" name="modelo2"> Modelo 2</label>
+                                        <label><input type="radio" name="modelo" value="2"> Modelo 2</label>
                                     </div>
                                 </div>
                             </div>
@@ -43,10 +43,10 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="radio col-md-4">
-                                        <label><input type="radio" name="b2c" checked> Pessoa Física</label>
+                                        <label><input type="radio" name="type" value="B2C" checked> Pessoa Física</label>
                                     </div>
                                     <div class="radio  col-md-4">
-                                        <label><input type="radio" name="b2b"> Pessoa Jurídica</label>
+                                        <label><input type="radio" name="type" value="B2B"> Pessoa Jurídica</label>
                                     </div>
                                 </div>
                             </div>
