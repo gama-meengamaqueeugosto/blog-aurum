@@ -42,7 +42,7 @@
                                         <td>{{ $post->author }}</td>
                                         <td>{{ $post->created_at->format('d/m/Y') }}</td>
                                         <td>
-                                            {{-- <a href="" class="btn btn-default">Editar</a> --}}
+                                            <a href="{{ route('adm.post.edit', $post->id) }}" class="btn btn-default">Editar</a>
                                             <a href="{{ route('adm.post.destroy', $post->id) }}" class="btn btn-default">Excluir</a>
                                         </td>
                                     </tr>

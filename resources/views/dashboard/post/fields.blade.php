@@ -30,12 +30,14 @@
     </div><!-- .col-sm-8 -->
 </div><!-- .form-group -->
 
-<div class="form-group">
-    <label for="image" class="control-label col-sm-2">Imagem</label>
+@if(!$edit)
+    <div class="form-group">
+        <label for="image" class="control-label col-sm-2">Imagem</label>
 
-    <div class="col-sm-4">
-        <div class="input-group">
-            <input type="file" accept="image/*" name="image" id="image" class="form-control">
-        </div>
-    </div><!-- .col-sm-8 -->
-</div><!-- .form-group -->
+        <div class="col-sm-4">
+            <div class="input-group">
+                <input type="file" accept="image/*" name="image" id="image" class="form-control">
+            </div>
+        </div><!-- .col-sm-8 -->
+    </div><!-- .form-group -->
+@endif

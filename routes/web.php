@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth'], function()
     Route::prefix('posts')->group(function () {
 	    Route::get('/', ['as' => 'adm.post.index', 'uses' => 'PostsController@index']);
 	    Route::get('/criar', ['as' => 'adm.post.create', 'uses' => 'PostsController@create']);
+	    Route::get('/{id}/editar', ['as' => 'adm.post.edit', 'uses' => 'PostsController@edit']);
+	    Route::put('/{id}', ['as' => 'adm.post.update', 'uses' => 'PostsController@update']);
 	    Route::post('/criar', ['as' => 'adm.post.store', 'uses' => 'PostsController@store']);
 	    Route::get('/{id}/excluir', ['as' => 'adm.post.destroy', 'uses' => 'PostsController@destroy']);
 	});

@@ -42,8 +42,10 @@
                                         <td>{{ $lead->created_at->format('d/m/Y H:i:s') }}</td>
                                         <td>{{ $lead->ip }}</td>
                                         <td>
-                                            {{-- <a href="" class="btn btn-default">Editar</a> --}}
-                                            <a href="{{ route('site.leads.destroy', $lead->id) }}" class="btn btn-default">Excluir</a>
+                                            @if(auth()->check())
+                                                {{-- <a href="" class="btn btn-default">Editar</a> --}}
+                                                <a href="{{ route('site.leads.destroy', $lead->id) }}" class="btn btn-default">Excluir</a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

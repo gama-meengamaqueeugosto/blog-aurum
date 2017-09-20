@@ -76,9 +76,15 @@ class PostsController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $this->post = $this->post->findOrFail($id);
+
+        $view       = view('dashboard.post.edit');
+        $view->edit = true;
+        $view->post = $this->post;
+
+        return $view;
     }
 
     /**
@@ -88,9 +94,20 @@ class PostsController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostSaveRequest $request, $id)
     {
-        //
+        $this->post = $this->post->findOrFail($id);
+
+        $this->post->fill($request->all());
+
+        if($request->hasFile('image'))
+        {
+            $this->post->uploadImage($request->file('image'));
+        }
+
+        $this->post->save();
+
+        return redirect()->route('adm.post.index')->with(['status' => 'Post atualizado com sucesso']);
     }
 
     /**
