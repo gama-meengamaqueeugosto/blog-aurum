@@ -43,10 +43,19 @@ class LeadController extends Controller
         $this->lead->ip = $this->getIp();
         $this->lead->save();
 
-        // if ($request->card) {
+        // if ($request->card) 
+        // {
+        //     if ($request->card == 2) {
+        //         $html = 'cards.two';
+        //         $name =  'cartao-de-visita-advogado-moderno-m-2.pdf';
+        //     }else{
+        //         $html = 'cards.one';
+        //         $name =  'cartao-de-visita-advogado-moderno-m-1.pdf';
+        //     }
 
-        //     $this->makeCard($reqeust);
-        //     dd($request->all());    
+        //     $pdf = PDF::loadView($html, $request->all());
+        //     $pdf->set_paper(array(0,0,'9cm','5cm'));
+        //     return $pdf->download($name);
         // }
         
         if($request->ebook)
@@ -67,25 +76,6 @@ class LeadController extends Controller
         return view('dashboard.leads',[
             'leads' => $this->lead->orderBy('name')->paginate(),
         ]);
-    }
-
-    public function makeCard($request)
-    {
-        if($request->modelo == 1)
-        {
-            $this->cardOne($request);
-        }
-
-        // if($request->modelo == 2)
-        // {
-        //     $this->cardTwo($request);
-        // }
-    }
-
-    public function carOne($request)
-    {
-        $pdf = PDF::loadView('cards.one', $request->all());
-        return $pdf->download('cartao-de-visita-advogado-moderno-m-1.pdf');
     }
 
     public function getIp()
