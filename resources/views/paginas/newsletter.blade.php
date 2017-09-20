@@ -32,7 +32,6 @@
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
                     <button type="submit" class="btn btn-primary">
-                        <i class="ion-paper-airplane"></i>
                         Enviar
                     </button>
                 </div>

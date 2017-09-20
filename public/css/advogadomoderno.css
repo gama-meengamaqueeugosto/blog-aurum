@@ -53,7 +53,7 @@ img::-moz-selection {
   background: transparent; }
 
 body {
-  -webkit-tap-highlight-color: #0c0e22; }
+  -webkit-tap-highlight-color: #c2c1c3; }
 
 #mainNav {
   background-color: #0c0e22; }
@@ -511,6 +511,14 @@ ul.social-buttons {
 .text-primary {
   color: #0c0e22 !important; }
 
+.title-blog {
+    color: #0c0e22 !important;}
+    .title-blog:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+
 .btn-primary {
   font-weight: 700;
   color: white;
@@ -525,7 +533,8 @@ ul.social-buttons {
   .btn-primary:hover {
     color: white;
     border-color: #141522;
-    background-color: #0c0e22; }
+    background-color: #0c0e22;
+    cursor: pointer;}
   .btn-primary.active, .btn-primary:active,
   .open > .btn-primary.dropdown-toggle {
     color: white;
