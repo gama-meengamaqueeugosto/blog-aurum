@@ -178,7 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         JD\Cloudder\CloudderServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
+        Anam\PhantomMagick\ConverterServiceProvider::class
 
     ],
 
@@ -232,6 +232,7 @@ return [
         'Button' => Bootstrapper\Facades\Button::class,
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Converter' => Anam\PhantomMagick\Facades\Converter::class,
 
     ],
 

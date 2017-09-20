@@ -6,6 +6,7 @@ use App\Http\Requests\LeadsSaveRequest;
 use Illuminate\Http\Request;
 use App\Lead;
 use PDF;
+use Converter;
 
 class LeadController extends Controller
 {
@@ -53,9 +54,9 @@ class LeadController extends Controller
         //         $name =  'cartao-de-visita-advogado-moderno-m-1.pdf';
         //     }
 
-        //     $pdf = PDF::loadView($html, $request->all());
-        //     $pdf->set_paper(array(0,0,'9cm','5cm'));
-        //     return $pdf->download($name);
+        //     Converter::make(view($html)->render())
+        //         ->toPng()
+        //         ->download('yahoo.png');
         // }
         
         if($request->ebook)
@@ -76,6 +77,15 @@ class LeadController extends Controller
         return view('dashboard.leads',[
             'leads' => $this->lead->orderBy('name')->paginate(),
         ]);
+    }
+
+    public function destroy($id)
+    {
+        $lead = $this->lead->findOrFail($id);
+
+        $lead->destroy($id);
+
+        return redirect()->route('site.leads.show')->with(['status' => 'Lead excluído']);
     }
 
     public function getIp()

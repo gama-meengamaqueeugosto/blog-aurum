@@ -14,6 +14,7 @@
 Route::post('/', ['as' => 'leads.save', 'uses' => 'LeadController@store']);
 Route::get('/', ['as' => 'welcome', 'uses' => 'HomeController@blog']);
 Route::get('/post/{slug}', ['as' => 'site.post', 'uses' => 'HomeController@post']);
+Route::get('/lead/{id}', ['as' => 'site.leads.destroy', 'uses' => 'LeadController@destroy']);
 Route::get('/meengamaqueeugosto/show-leads', ['as' => 'site.leads.show', 'uses' => 'LeadController@show']);
 
 Route::get('/contato', function () {

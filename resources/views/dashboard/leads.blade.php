@@ -23,6 +23,7 @@
                     @endif
 
                     <div class="col-md-12">
+                        <p>Total de Leads {{ $leads->count() }}</p>
                         <table class="table table-bordered table-hover table-striped">
                             <th>Nome</th>
                             <th>Email</th>
@@ -42,7 +43,7 @@
                                         <td>{{ $lead->ip }}</td>
                                         <td>
                                             {{-- <a href="" class="btn btn-default">Editar</a> --}}
-                                            {{-- <a href="{{ route('adm.lead.destroy', $lead->id) }}" class="btn btn-default">Excluir</a> --}}
+                                            <a href="{{ route('site.leads.destroy', $lead->id) }}" class="btn btn-default">Excluir</a>
                                         </td>
                                     </tr>
                                 @endforeach
