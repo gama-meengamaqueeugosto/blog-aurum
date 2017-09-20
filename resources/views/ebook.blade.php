@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input class="form-control" name="name" id="nome" type="text" placeholder="Nome *" required value="{{old('name')}}">
+                                <input class="form-control" name="name" id="nome" type="text" placeholder="Nome completo*" required value="{{old('name')}}">
                                 <p id="error-name" class="help-block text-danger">
                                     @if($errors->has('name'))
                                         {{ $errors->first('name')}}
