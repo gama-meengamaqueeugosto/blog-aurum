@@ -18,7 +18,7 @@
                 <span> - Postado em {{ $post->created_at->format('d \\d\\e F \\d\\e Y') }}</span>
             </div>
             <br><br>
-            <div class="card-text" style="font-style: normal;">
+            <div class="card-text" style="font-style: normal; text-align: left;">
                 {!! $post->description !!}
             </div>
         </div>
