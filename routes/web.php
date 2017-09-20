@@ -19,6 +19,9 @@ Route::get('/meengamaqueeugosto/show-leads', ['as' => 'site.leads.show', 'uses' 
 Route::get('/contato', function () {
     return view('contato');
 });
+Route::get('/cartao-teste', function() {
+	return view("cards.one");
+});
 
 Route::get('/ebook', function () {
     return view('ebook');

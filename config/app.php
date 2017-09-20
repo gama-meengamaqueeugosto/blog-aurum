@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         JD\Cloudder\CloudderServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -230,6 +231,7 @@ return [
         'Table' => Bootstrapper\Facades\Table::class,
         'Button' => Bootstrapper\Facades\Button::class,
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

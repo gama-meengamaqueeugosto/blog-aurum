@@ -18,15 +18,18 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input class="form-control" name="name" id="nome" type="text" placeholder="Nome *" required>
+                                <input class="form-control" name="name" id="nome" type="text" placeholder="Nome *" required value="{{old('name')}}">
                                 <p id="error-name" class="help-block text-danger">
                                     @if($errors->has('name'))
-                                        {{ $errors->first('name') }}
+                                        {{ $errors->first('name')}}
+                                    @endif
+                                    @if(session()->has('error'))
+                                        {{ session()->get('error.name') }}
                                     @endif
                                 </p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" name="email" id="email" type="email" placeholder="E-mail*" required>
+                                <input class="form-control" name="email" id="email" type="email" placeholder="E-mail*" required value="{{old('email')}}">
                                 <p class="help-block text-danger">
                                     @if($errors->has('email'))
                                         {{ $errors->first('email') }}
