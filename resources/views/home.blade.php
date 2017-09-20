@@ -9,6 +9,7 @@
                 @include("paginas.newsletter")
                 @include("paginas.busca")
                 @include("paginas.propagandaEbook")
+                @include("paginas.facebook")
             </div>
     </div>
 @endsection

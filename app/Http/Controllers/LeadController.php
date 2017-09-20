@@ -54,7 +54,7 @@ class LeadController extends Controller
             return response()->download(public_path('/ebooks/o-guia-pratico-do-advogado-moderno-ebook.pdf'));
         }
 
-        return redirect()->route('leads.success');
+        return view('newsletterSuccess');
     }
 
     public function success()
