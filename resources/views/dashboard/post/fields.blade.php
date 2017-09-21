@@ -30,7 +30,6 @@
     </div><!-- .col-sm-8 -->
 </div><!-- .form-group -->
 
-@if(!$edit)
     <div class="form-group">
         <label for="image" class="control-label col-sm-2">Imagem</label>
 
@@ -40,4 +39,3 @@
             </div>
         </div><!-- .col-sm-8 -->
     </div><!-- .form-group -->
-@endif
