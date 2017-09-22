@@ -24,6 +24,10 @@ Route::get('/cartao-teste', function() {
 	return view("cards.one");
 });
 
+Route::get('/pesquisa', function() {
+	return view('pesquisa');
+});
+
 Route::get('/ebook', function () {
     return view('ebook');
 });

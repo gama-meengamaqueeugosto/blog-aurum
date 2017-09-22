@@ -12,6 +12,10 @@ class Lead extends Model
     	'name',
     	'email',
         'ip',
-        'type'
+        'type',
+        'pg1',
+        'pg2',
+        'pg3',
+        'pg4',
     ];
 }
