@@ -16,10 +16,10 @@
 		@foreach($leads as $lead)
 			<tr>
 				<td>{{ $lead->email }}</td>
-				<td>{{ $lead->name }}</td>
+				<td>{{ $lead->nome }}</td>
 				<td>{{ $lead->ip }}</td>
 				<td>{{ $lead->tipo }}</td>
-				<td>{{ $lead->created_at }}</td>
+				<td>{{ $lead->data_hora }}</td>
 			</tr>
 		@endforeach
 	</table>
