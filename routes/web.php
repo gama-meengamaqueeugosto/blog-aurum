@@ -36,9 +36,13 @@ Route::get('/cartao', function () {
     return view('cartao');
 });
 
+Route::get('gera-csv', ['uses' => 'LeadController@csv']);
+
 Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/lead/{id}', ['uses' => 'LeadController@edit']);
 
     Route::prefix('posts')->group(function () {
 	    Route::get('/', ['as' => 'adm.post.index', 'uses' => 'PostsController@index']);

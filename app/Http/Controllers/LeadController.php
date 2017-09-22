@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LeadsSaveRequest;
 use Illuminate\Http\Request;
 use App\Lead;
-use PDF;
 use Converter;
 
 class LeadController extends Controller
@@ -91,6 +90,16 @@ class LeadController extends Controller
         $lead->destroy($id);
 
         return redirect()->route('site.leads.show')->with(['status' => 'Lead excluído']);
+    }
+
+    public function edit($id)
+    {
+        return view('leads.edit', ['lead' => $this->lead->findOrFail($id)]);
+    }
+
+    public function csv(){
+        $leads = $this->lead->select('name as nome', 'email', 'ip', 'type as tipo', 'created_at as data_hora')->get();
+        return view('dashboard.leads.csv', ['leads' => $leads]);
     }
 
     public function getIp()
